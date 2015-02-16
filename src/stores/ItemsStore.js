@@ -8,10 +8,10 @@ let inputBus = new Bacon.Bus();
 // initial values
 setTimeout(function() {
   inputBus.push([
-    {text: 'foo', time: Date.now()},
-    {text: 'bar', time: Date.now()},
-    {text: 'baz', time: Date.now()}
-  ]);
+    {text: 'おはようございます！', time: Date.now() - 60 * 60 * 6 * 1000},
+    {text: 'こんにちは！', time: Date.now() - 60 * 60 * 3 * 1000},
+    {text: 'こんばんは！', time: Date.now()}
+  ].reverse());
 }, 500);
 
 // TODO 初期化でPropertyをonValue的な処理で有効にしたい

@@ -23,6 +23,8 @@ function bufferedBrowserify(standaloneName) {
         standalone : standaloneName,
         debug      : true,
         noParse    : [
+          require.resolve('baconjs'),
+          require.resolve('react'),
           require.resolve('6to5/browser-polyfill')
         ]
       })

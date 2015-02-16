@@ -12,3 +12,4 @@ export default React.render(
   React.createFactory(App)(),
   document.getElementById('content')
 );
+
