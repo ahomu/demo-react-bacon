@@ -16,7 +16,7 @@ var GLOB_SRC_FILES  = ['./index.js', './src/**/*.js'];
 function bufferedBrowserify(standaloneName) {
   var transform  = require('vinyl-transform');
   var browserify = require('browserify');
-  var to5ify     = require('6to5ify');
+  var babelify   = require('babelify');
 
   return transform(function(filename) {
     return browserify(filename, {
@@ -25,10 +25,10 @@ function bufferedBrowserify(standaloneName) {
         noParse    : [
           require.resolve('baconjs'),
           require.resolve('react'),
-          require.resolve('6to5/browser-polyfill')
+          require.resolve('babel/browser-polyfill')
         ]
       })
-      .transform(to5ify.configure({
+      .transform(babelify.configure({
         experimental : false
       }))
       .bundle()

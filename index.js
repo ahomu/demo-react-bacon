@@ -2,9 +2,9 @@
 
 /**
  * if using a feature that requires a browser-polyfill
- * @see https://6to5.org/polyfill.html
+ * @see https://babeljs.io/docs/usage/polyfill/
  */
-require('6to5/browser-polyfill');
+require('babel/browser-polyfill');
 
 // bootstrap
 require('./src/index');
