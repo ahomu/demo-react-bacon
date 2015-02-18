@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "browser": {
+    "react": "react/dist/react.js"
+  },
   "scripts": {
     "test": "testem -f testem.json ci",
     "devel": "testem -f testem.json",
