@@ -7,9 +7,6 @@ import ViewHelper from '../utils/view-helper';
 
 export default React.createClass({
 
-  propTypes: {
-  },
-
   getInitialState() {
     return {
       items: []

@@ -22,7 +22,7 @@ export default {
   /**
    * @property {Bacon.Bus} inputStream
    */
-  inputBus       : inputBus,
+  inputStream    : inputBus,
 
   /**
    * @property {Bacon.Property} outputProperty

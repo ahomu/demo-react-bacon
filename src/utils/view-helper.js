@@ -1,9 +1,13 @@
 'use strict';
 
-module.exports = {
-  relativeTime: function(time, now) {
+export default {
+  /**
+   * @param {Date} time
+   * @returns {String}
+   */
+  relativeTime: function(time) {
     var date     = new Date(time),
-        diff     = (((now || Date.now()) - date.getTime()) / 1000),
+        diff     = (Date.now() - date.getTime()) / 1000,
         day_diff = Math.floor(diff / 86400);
 
     if (isNaN(day_diff) || day_diff < 0 || day_diff >= 31) {

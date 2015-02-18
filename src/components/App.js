@@ -8,12 +8,8 @@ import ItemsStore from '../stores/ItemsStore';
 
 export default React.createClass({
 
-  propTypes: {
-
-  },
-
   componentWillMount() {
-    ItemsStore.inputBus.push([
+    ItemsStore.inputStream.push([
       {text: 'おはようございます！', time: Date.now() - 60 * 60 * 6 * 1000},
       {text: 'こんにちは！', time: Date.now() - 60 * 60 * 3 * 1000},
       {text: 'こんばんは！', time: Date.now()}
