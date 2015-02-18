@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/ahomu/demo-react-bacon",
   "dependencies": {
+    "bacon.model": "^0.1.12",
     "baconjs": "^0.7.48",
     "react": "^0.12.2"
   },

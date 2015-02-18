@@ -13,7 +13,11 @@ export default React.createClass({
   },
 
   componentWillMount() {
-
+    ItemsStore.inputBus.push([
+      {text: 'おはようございます！', time: Date.now() - 60 * 60 * 6 * 1000},
+      {text: 'こんにちは！', time: Date.now() - 60 * 60 * 3 * 1000},
+      {text: 'こんばんは！', time: Date.now()}
+    ].reverse());
   },
 
   render() {
