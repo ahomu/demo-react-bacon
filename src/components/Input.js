@@ -60,12 +60,45 @@ export default React.createClass({
 
   render() {
     return (
-      <div>
-        <textarea ref="input" onKeyUp={this.inputKey} rows="5" cols="30"></textarea>
-        <span style={this.state.isLengthOver ? {color: 'red'} : {}}>{this.state.currentLength}</span> / {this.props.maxLength}
+      <div id="Input">
+        <style>{this.styles}</style>
+        <textarea ref="input" onKeyUp={this.inputKey}></textarea>
+        <span className="count">
+        <span style={{color: this.state.isLengthOver ? 'red' : 'black'}}>{this.state.currentLength}</span> / {this.props.maxLength}
+        </span>
         <button onClick={this.submitBtn}>Submit</button>
       </div>
     );
-  }
+  },
 
+  styles: (`
+    #Input {
+      position: relative;
+    }
+    #Input textarea {
+      width: 330px;
+      height: 100px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+    #Input .count {
+      position: absolute;
+      bottom: 10px;
+      left: 200px;
+      text-align: right;
+      display: inline-block;
+      width: 100px;
+      padding: 0 20px;
+      font-size: 0.8em;
+    }
+    #Input button {
+      float: right;
+      border: none;
+      width: 70px;
+      height: 100px;
+      font-weight: bold;
+      color: #333;
+      background-color: lightblue;
+    }
+  `)
 });

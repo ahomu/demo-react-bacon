@@ -19,12 +19,34 @@ export default React.createClass({
 
   render() {
     return (
-      <ul>
-        {this.state.items.map((item) => (
-          <li>{item.text} / {ViewHelper.relativeTime(item.time)}</li>
-        ))}
-      </ul>
+      <div>
+        <style>{this.styles}</style>
+        <ul id="List">
+          {this.state.items.map((item) => (
+            <li>
+              {item.text}
+              <time>{ViewHelper.relativeTime(item.time)}</time>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
-  }
+  },
 
+  styles: (`
+    #List {
+      max-width: 400px;
+      margin: 20px 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    #List li {
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+    #List time {
+      padding-left: 1em;
+      font-size: 0.8em;
+    }
+  `)
 });
